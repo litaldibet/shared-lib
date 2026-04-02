@@ -8,6 +8,7 @@ export type PostCard = {
   slug: string
   preview: string
   post_type: PostCategoryInput
+  active: boolean
   banner_url: string
 }
 
@@ -31,6 +32,7 @@ export function isPostCard(value: unknown): value is PostCard {
     typeof value.slug === "string" &&
     typeof value.preview === "string" &&
     typeof value.post_type === "string" &&
+    typeof value.active === "boolean" &&
     typeof value.banner_url === "string"
   )
 }

@@ -27,6 +27,7 @@ export function buildPostFormData(params: BuildPostFormDataParams): FormData {
     title,
     preview,
     content_markdown,
+    active,
     banner,
     images,
     password,
@@ -42,6 +43,7 @@ export function buildPostFormData(params: BuildPostFormDataParams): FormData {
   form.append("title", title)
   form.append("preview", preview)
   form.append("content_markdown", content_markdown)
+  form.append("active", String(active))
 
   if (banner) {
     form.append("banner", banner, banner.name || "banner")
