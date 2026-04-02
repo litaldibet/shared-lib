@@ -7,6 +7,7 @@ export type PostDetails = {
   post_type: PostCategoryInput
   title: string
   preview: string
+  active: boolean
   slug: string
   banner_path: string
   banner_url: string
@@ -33,6 +34,7 @@ export function isPostDetails(value: unknown): value is PostDetails {
     hasStringField(value, "post_type") &&
     hasStringField(value, "title") &&
     hasStringField(value, "preview") &&
+    typeof value.active === "boolean" &&
     hasStringField(value, "slug") &&
     hasStringField(value, "banner_path") &&
     hasStringField(value, "banner_url") &&
